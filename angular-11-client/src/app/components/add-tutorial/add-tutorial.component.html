@@ -24,6 +24,73 @@
         />
       </div>
 
+      <div class="form-group">
+        <label for="placa">Placa</label>
+        <input
+          class="form-control"
+          id="placa"
+          required
+          [(ngModel)]="tutorial.placa"
+          name="placa"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="chasis">Numero de Chasis</label>
+        <input
+          class="form-control"
+          id="chasis"
+          required
+          [(ngModel)]="tutorial.chasis"
+          name="chasis"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="kilometraje">Kilometraje</label>
+        <input
+          class="form-control"
+          id="kilometraje"
+          required
+          [(ngModel)]="tutorial.kilometraje"
+          name="kilometraje"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha de último ingreso</label>
+        <input
+          class="form-control"
+          id="fecha"
+          required
+          [(ngModel)]="tutorial.fecha"
+          name="fecha"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="obra">Mano de obra</label>
+        <input
+          class="form-control"
+          id="obra"
+          required
+          [(ngModel)]="tutorial.obra"
+          name="obra"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          class="form-control"
+          id="nombre"
+          required
+          [(ngModel)]="tutorial.nombre"
+          name="nombre"
+        />
+      </div>
+
+    <hr>
       <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
     </div>
 

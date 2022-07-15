@@ -11,6 +11,12 @@ export class AddTutorialComponent implements OnInit {
   tutorial: Tutorial = {
     title: '',
     description: '',
+    placa: '',
+    chasis: '',
+    kilometraje: '',
+    fecha: '',
+    obra: '',
+    nombre: '',
     published: false
   };
   submitted = false;
@@ -42,6 +48,12 @@ export class AddTutorialComponent implements OnInit {
     this.tutorial = {
       title: '',
       description: '',
+      placa: '',
+      chasis: '',
+      kilometraje: '',
+      fecha: '',
+      obra: '',
+      nombre: '',
       published: false
     };
   }
