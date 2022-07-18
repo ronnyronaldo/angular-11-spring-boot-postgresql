@@ -10,9 +10,9 @@ import { Tutorial } from 'src/app/models/tutorial.model';
 })
 export class TutorialDetailsComponent implements OnInit {
   currentTutorial: Tutorial = {
-    title: '',
-    description: '',
-    published: false
+    placa: '',
+    kilometraje: '',
+    nombre: ''
   };
   message = '';
 
@@ -38,27 +38,6 @@ export class TutorialDetailsComponent implements OnInit {
         });
   }
 
-  updatePublished(status: boolean): void {
-    const data = {
-      title: this.currentTutorial.title,
-      description: this.currentTutorial.description,
-      published: status
-    };
-
-    this.message = '';
-
-    this.tutorialService.update(this.currentTutorial.id, data)
-      .subscribe(
-        response => {
-          this.currentTutorial.published = status;
-          console.log(response);
-          this.message = response.message ? response.message : 'This tutorial was updated successfully!';
-        },
-        error => {
-          console.log(error);
-        });
-  }
-
   updateTutorial(): void {
     this.message = '';
 
@@ -66,7 +45,7 @@ export class TutorialDetailsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = response.message ? response.message : 'This tutorial was updated successfully!';
+          this.message = response.message ? response.message : 'Los registros fueron actualizados correctamente!';
         },
         error => {
           console.log(error);

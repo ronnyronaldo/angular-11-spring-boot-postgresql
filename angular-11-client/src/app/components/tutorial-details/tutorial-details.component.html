@@ -3,57 +3,39 @@
     <h4>Tutorial</h4>
     <form>
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="placa">Placa</label>
         <input
           type="text"
           class="form-control"
-          id="title"
-          [(ngModel)]="currentTutorial.title"
-          name="title"
+          id="placa"
+          [(ngModel)]="currentTutorial.placa"
+          name="placa"
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="kilometraje">Kilometraje</label>
         <input
           type="text"
           class="form-control"
-          id="description"
-          [(ngModel)]="currentTutorial.description"
-          name="description"
+          id="kilometraje"
+          [(ngModel)]="currentTutorial.kilometraje"
+          name="kilometraje"
         />
       </div>
 
-      <div class="form-group">
-        <label><strong>Status:</strong></label>
-        {{ currentTutorial.published ? "Published" : "Pending" }}
-      </div>
     </form>
 
-    <button
-      class="badge badge-primary mr-2"
-      *ngIf="currentTutorial.published"
-      (click)="updatePublished(false)"
-    >
-      UnPublish
-    </button>
-    <button
-      *ngIf="!currentTutorial.published"
-      class="badge badge-primary mr-2"
-      (click)="updatePublished(true)"
-    >
-      Publish
-    </button>
 
-    <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
-      Delete
+    <button class="m-3 btn btn-sm btn-danger" (click)="deleteTutorial()">
+      Borrar
     </button>
 
     <button
       type="submit"
-      class="badge badge-success mb-2"
+      class="m-3 btn btn-sm btn-warning"
       (click)="updateTutorial()"
     >
-      Update
+      Actualizar
     </button>
     <p>{{ message }}</p>
   </div>

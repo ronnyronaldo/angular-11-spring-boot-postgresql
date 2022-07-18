@@ -9,15 +9,12 @@ import { TutorialService } from 'src/app/services/tutorial.service';
 })
 export class AddTutorialComponent implements OnInit {
   tutorial: Tutorial = {
-    title: '',
-    description: '',
     placa: '',
     chasis: '',
     kilometraje: '',
     fecha: '',
     obra: '',
     nombre: '',
-    published: false
   };
   submitted = false;
 
@@ -28,8 +25,12 @@ export class AddTutorialComponent implements OnInit {
 
   saveTutorial(): void {
     const data = {
-      title: this.tutorial.title,
-      description: this.tutorial.description
+      placa: this.tutorial.placa,
+      chasis: this.tutorial.chasis,
+      kilometraje: this.tutorial.kilometraje,
+      fecha: this.tutorial.fecha,
+      obra: this.tutorial.obra,
+      nombre: this.tutorial.nombre,
     };
 
     this.tutorialService.create(data)
@@ -46,15 +47,12 @@ export class AddTutorialComponent implements OnInit {
   newTutorial(): void {
     this.submitted = false;
     this.tutorial = {
-      title: '',
-      description: '',
       placa: '',
       chasis: '',
       kilometraje: '',
       fecha: '',
       obra: '',
       nombre: '',
-      published: false
     };
   }
 

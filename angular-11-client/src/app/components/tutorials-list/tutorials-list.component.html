@@ -4,7 +4,7 @@
       <input
         type="text"
         class="form-control"
-        placeholder="Search by title"
+        placeholder="Buscar por placa"
         [(ngModel)]="title"
       />
       <div class="input-group-append">
@@ -13,7 +13,7 @@
           type="button"
           (click)="searchTitle()"
         >
-          Search
+          Buscar
         </button>
       </div>
     </div>
@@ -21,12 +21,12 @@
 
   <div *ngIf="!currentTutorial">
     <br />
-    <p>Please click on a Tutorial...</p>
+    <p>Por favor seleccione una placa para ver sus detalles...</p>
   </div>
   
   <div class="col-md-6">
-    <h4>Tutorials List</h4>
-    <div class="table-responsive"  style="width:800px; height:500px; overflow: auto;">
+    <h4>Lista de automóviles</h4>
+    <div class="table-responsive"  style="width:300px; height:500px; overflow: auto;">
     <table  class="table table-hover">
       <thead>
           <tr>
@@ -34,7 +34,7 @@
                   Placa
               </th>
               <th scope="col">
-                Accion
+                
             </th>
           </tr>
       </thead>
@@ -45,11 +45,11 @@
               (click)="setActiveTutorial(tutorial, i)" 
           >
               <td>
-                {{ tutorial.title }}
+                {{ tutorial.placa }}
               </td>
               <td>
-                <button class="m-3 btn btn-sm btn-warning" routerLink="/tutorials/{{ tutorial.id}}" >
-                  Edit
+                <button class="m-2 btn btn-sm btn-warning" routerLink="/tutorials/{{ tutorial.id}}" >
+                  Modificar
                 </button>
               </td>
           </tr>
@@ -63,17 +63,17 @@
   </div>
   <div>
     <div *ngIf="currentTutorial">
-      <h4>Tutorial</h4>
+      <h4>Inventario</h4>
       <div>
-        <label><strong>Title:</strong></label> {{ currentTutorial.title }}
+        <label><strong>Placa:</strong></label> {{ currentTutorial.placa }}
       </div>
       <div>
-        <label><strong>Description:</strong></label>
-        {{ currentTutorial.description }}
+        <label><strong>Kilometraje:</strong></label>
+        {{ currentTutorial.kilometraje }}
       </div>
       <div>
-        <label><strong>Status:</strong></label>
-        {{ currentTutorial.published ? "Published" : "Pending" }}
+        <label><strong>Nombre:</strong></label>
+        {{ currentTutorial.nombre }}
       </div>
 
       <a class="badge badge-warning" routerLink="/tutorials/{{ currentTutorial.id }}">
