@@ -12,7 +12,7 @@ export class AddTutorialComponent implements OnInit {
     placa: '',
     chasis: '',
     kilometraje: '',
-    fecha: '',
+    fecha: new Date(),
     obra: '',
     nombre: '',
   };
@@ -50,7 +50,7 @@ export class AddTutorialComponent implements OnInit {
       placa: '',
       chasis: '',
       kilometraje: '',
-      fecha: '',
+      fecha: new Date(),
       obra: '',
       nombre: '',
     };

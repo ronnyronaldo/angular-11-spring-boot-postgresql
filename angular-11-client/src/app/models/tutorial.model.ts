@@ -3,7 +3,7 @@ export class Tutorial {
   placa?: string;
   chasis?: string;
   kilometraje?: string;
-  fecha?: string;
+  fecha?: Date;
   obra?: string;
   nombre?: string;
 }

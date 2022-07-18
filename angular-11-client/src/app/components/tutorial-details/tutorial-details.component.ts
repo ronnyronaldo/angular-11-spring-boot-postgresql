@@ -11,11 +11,14 @@ import { Tutorial } from 'src/app/models/tutorial.model';
 export class TutorialDetailsComponent implements OnInit {
   currentTutorial: Tutorial = {
     placa: '',
+    chasis:'',
     kilometraje: '',
+    fecha: new Date(),
+    obra: '',
     nombre: ''
   };
   message = '';
-
+  
   constructor(
     private tutorialService: TutorialService,
     private route: ActivatedRoute,
@@ -46,6 +49,7 @@ export class TutorialDetailsComponent implements OnInit {
         response => {
           console.log(response);
           this.message = response.message ? response.message : 'Los registros fueron actualizados correctamente!';
+          //this.router.navigate(['/tutorials']);
         },
         error => {
           console.log(error);
