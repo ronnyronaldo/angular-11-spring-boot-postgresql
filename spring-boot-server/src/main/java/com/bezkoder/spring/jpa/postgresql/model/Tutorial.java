@@ -21,7 +21,7 @@ public class Tutorial {
 	private String kilometraje;
 
 	@Column(name = "fecha_tratado")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fecha;
 
 	@Column(name = "mano_de_obra")
