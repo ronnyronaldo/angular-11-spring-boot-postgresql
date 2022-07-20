@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "inventario")
-public class Tutorial {
+public class Auto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +21,7 @@ public class Tutorial {
 	private String kilometraje;
 
 	@Column(name = "fecha_tratado")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date fecha;
 
 	@Column(name = "mano_de_obra")
@@ -30,11 +30,11 @@ public class Tutorial {
 	@Column(name = "persona")
 	private String nombre;
 
-	public Tutorial() {
+	public Auto() {
 
 	}
 
-	public Tutorial(String placa, String chasis, String kilometraje, Date fecha, String obra, String nombre) {
+	public Auto(String placa, String chasis, String kilometraje, Date fecha, String obra, String nombre) {
 		this.placa = placa;
 		this.chasis = chasis;
 		this.kilometraje = kilometraje;
@@ -97,7 +97,7 @@ public class Tutorial {
 
 	@Override
 	public String toString() {
-		return "Tutorial{" +
+		return "Auto{" +
 				"id=" + id +
 				", placa='" + placa + '\'' +
 				", chasis='" + chasis + '\'' +
