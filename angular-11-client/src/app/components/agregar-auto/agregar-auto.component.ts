@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Tutorial } from 'src/app/models/tutorial.model';
-import { TutorialService } from 'src/app/services/tutorial.service';
+import { Auto } from 'src/app/models/auto.model';
+import { AutoService } from 'src/app/services/auto.service';
 
 @Component({
-  selector: 'app-add-tutorial',
+  selector: 'app-agregar-auto',
   templateUrl: './agregar-auto.component.html',
   styleUrls: ['./agregar-auto.component.css']
 })
 export class AgregarAutoComponent implements OnInit {
-  tutorial: Tutorial = {
+  tutorial: Auto = {
     placa: '',
     chasis: '',
     kilometraje: '',
-    fecha: new Date(),
+    fecha: Date,
     obra: '',
     nombre: '',
   };
   submitted = false;
 
-  constructor(private tutorialService: TutorialService) { }
+  constructor(private autoService: AutoService) { }
 
   ngOnInit(): void {
   }
@@ -33,7 +33,7 @@ export class AgregarAutoComponent implements OnInit {
       nombre: this.tutorial.nombre,
     };
 
-    this.tutorialService.create(data)
+    this.autoService.create(data)
       .subscribe(
         response => {
           console.log(response);
@@ -50,7 +50,7 @@ export class AgregarAutoComponent implements OnInit {
       placa: '',
       chasis: '',
       kilometraje: '',
-      fecha: new Date(),
+      fecha: Date,
       obra: '',
       nombre: '',
     };

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { TutorialService } from 'src/app/services/tutorial.service';
+import { AutoService } from 'src/app/services/auto.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Tutorial } from 'src/app/models/tutorial.model';
+import { Auto } from 'src/app/models/auto.model';
 
 @Component({
-  selector: 'app-tutorial-details',
-  templateUrl: './tutorial-details.component.html',
-  styleUrls: ['./tutorial-details.component.css']
+  selector: 'app-editar-autos',
+  templateUrl: './editar-autos.component.html',
+  styleUrls: ['./editar-autos.component.css']
 })
-export class TutorialDetailsComponent implements OnInit {
-  currentTutorial: Tutorial = {
+export class EditarAutosComponent implements OnInit {
+  currentTutorial: Auto = {
     placa: '',
     chasis:'',
     kilometraje: '',
@@ -20,7 +20,7 @@ export class TutorialDetailsComponent implements OnInit {
   message = '';
   
   constructor(
-    private tutorialService: TutorialService,
+    private autoService: AutoService,
     private route: ActivatedRoute,
     private router: Router) { }
 
@@ -30,7 +30,7 @@ export class TutorialDetailsComponent implements OnInit {
   }
 
   getTutorial(id: string): void {
-    this.tutorialService.get(id)
+    this.autoService.get(id)
       .subscribe(
         data => {
           this.currentTutorial = data;
@@ -44,7 +44,7 @@ export class TutorialDetailsComponent implements OnInit {
   updateTutorial(): void {
     this.message = '';
 
-    this.tutorialService.update(this.currentTutorial.id, this.currentTutorial)
+    this.autoService.update(this.currentTutorial.id, this.currentTutorial)
       .subscribe(
         response => {
           console.log(response);
@@ -57,7 +57,7 @@ export class TutorialDetailsComponent implements OnInit {
   }
 
   deleteTutorial(): void {
-    this.tutorialService.delete(this.currentTutorial.id)
+    this.autoService.delete(this.currentTutorial.id)
       .subscribe(
         response => {
           console.log(response);

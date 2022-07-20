@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Tutorial } from '../models/tutorial.model';
+import { Auto } from '../models/auto.model';
 
 const baseUrl = 'http://localhost:8080/api/tutorials';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TutorialService {
+export class AutoService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(baseUrl);
+  getAll(): Observable<Auto[]> {
+    return this.http.get<Auto[]>(baseUrl);
   }
 
-  get(id: any): Observable<Tutorial> {
+  get(id: any): Observable<Auto> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
@@ -36,7 +36,7 @@ export class TutorialService {
     return this.http.delete(baseUrl);
   }
 
-  findByPlaca(placa: any): Observable<Tutorial[]> {
-    return this.http.get<Tutorial[]>(`${baseUrl}?placa=${placa}`);
+  findByPlaca(placa: any): Observable<Auto[]> {
+    return this.http.get<Auto[]>(`${baseUrl}?placa=${placa}`);
   }
 }
